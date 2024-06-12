@@ -1,12 +1,12 @@
 {
   "name": "package-updates",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Jacob Samuel G",
   "homepage": "https://github.com/jacsamg/package-updates",
   "description": "Utilities for updating Node.js packages",
   "license": "MIT",
   "bin": {
-    "package-updates": "bin/cmd.exe"
+    "package-updates": "bin/cmd"
   },
   "scripts": {
     "build": "powershell.exe ./build.ps1",
