@@ -1,15 +1,16 @@
 {
   "name": "package-updates",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "Jacob Samuel G",
+  "homepage": "https://github.com/jacsamg/package-updates",
   "description": "Utilities for updating Node.js packages",
   "license": "MIT",
   "bin": {
-    "package-updates": "./bin/cmd"
+    "package-updates": "bin/cmd.exe"
   },
   "scripts": {
     "build": "powershell.exe ./build.ps1",
-    "postinstall": "node ./postinstall.js"
+    "postinstall": "npx link"
   },
   "keywords": [
     "cli",
