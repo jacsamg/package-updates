@@ -205,7 +205,7 @@ func getArrayOfDependencyIds(idsToUpdate string) []int {
 func execNpmUninstallCdm(dependency OutdatedDependencyWithIndex) {
 	var outBuffer, errBuffer bytes.Buffer
 
-	cmd := exec.Command("npm", "uninstall", dependency.Name)
+	cmd := exec.Command("npm", "uninstall", dependency.Name, "--force")
 	cmd.Stdout = &outBuffer
 	cmd.Stderr = &errBuffer
 	err := cmd.Run()
@@ -230,7 +230,7 @@ func execNpmInstallCdm(dependency OutdatedDependencyWithIndex) {
 	dependencyType := ""
 
 	if dependency.Type == "devDependencies" {
-		dependencyType = "-save-dev"
+		dependencyType = "--save-dev"
 	} else if dependency.Type == "dependencies" {
 		dependencyType = "--save"
 	}
