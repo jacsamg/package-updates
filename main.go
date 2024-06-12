@@ -265,8 +265,8 @@ func updateProcess(idsToUpdate string) {
 		dependencyToUpdate := dependencys[id]
 
 		fmt.Printf("Updating '%s' from %s to %s \n", dependencyToUpdate.Name, dependencyToUpdate.Current, dependencyToUpdate.Latest)
-		// execNpmUninstallCdm(dependencyToUpdate)
-		// execNpmInstallCdm(dependencyToUpdate)
+		execNpmUninstallCdm(dependencyToUpdate)
+		execNpmInstallCdm(dependencyToUpdate)
 		fmt.Printf("Dependency '%s' updated successfully \n", dependencyToUpdate.Name)
 		fmt.Println()
 	}
