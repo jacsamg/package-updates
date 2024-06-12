@@ -223,8 +223,6 @@ func execNpmUninstallCdm(dependency OutdatedDependencyWithIndex) {
 			checkError(errors.New(errStr))
 		}
 	}
-
-	fmt.Println(outBuffer.String())
 }
 
 func execNpmInstallCdm(dependency OutdatedDependencyWithIndex) {
@@ -237,7 +235,7 @@ func execNpmInstallCdm(dependency OutdatedDependencyWithIndex) {
 		dependencyType = "--save"
 	}
 
-	cmd := exec.Command("npm", "install", dependency.Name+"@"+dependency.Latest, dependencyType)
+	cmd := exec.Command("npm", "install", dependency.Name+"@"+dependency.Latest, dependencyType, "--force")
 	cmd.Stdout = &outBuffer
 	cmd.Stderr = &errBuffer
 	err := cmd.Run()
